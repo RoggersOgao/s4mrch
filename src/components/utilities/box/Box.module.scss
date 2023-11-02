@@ -1,0 +1,144 @@
+@import "../../../mixin";
+
+.box {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    padding: 2rem;
+
+    .spanIcon {
+        position: absolute;
+        top: 70%;
+        z-index: 1;
+        font-size: 20rem;
+        transform: translateY(-50%);
+        right: 0;
+        color: var(--overlay-icon-color);
+    }
+
+    &Top {
+        display: flex;
+        justify-content: space-between;
+
+
+        &Left {
+            width: 2.8rem;
+            height: 2.8rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            i {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.6rem;
+            }
+        }
+
+        &Right {
+            width: 2.8rem;
+            height: 2.8rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+            transition: all .3s ease-in-out;
+
+            &:hover {
+                background-color: var(--hoverBackground);
+                cursor: pointer;
+            }
+
+            i {
+                font-size: 2rem;
+                color: var(--defined-text-color);
+            }
+        }
+    }
+
+    &Bottom {
+        margin-top: 2.4rem;
+        display: flex;
+        position: relative;
+        z-index: 2;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        &Left {
+            h1 {
+                color: var(--defined-text-color);
+                font-weight: 700;
+                font-size: 2.5rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+                margin-top: .6rem;
+            }
+        }
+
+        &Right {
+            .statCalc {
+                display: flex;
+                gap: .6rem;
+                align-items: center;
+
+                .caret {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    i {
+                        font-size: 2rem;
+                    }
+                }
+
+                .percentageCalc {
+                    p {
+                        font-size: 1.4rem;
+
+                    }
+                }
+            }
+        }
+
+    }
+
+    .dropdown {
+        position: absolute;
+        top: 5rem;
+        right: 1rem;
+        background-color: var(--background-color);
+        border-radius: .3rem;
+        overflow: hidden;
+        z-index: 2;
+
+        .dropcont {
+            .dropdownList {
+                list-style-type: none;
+
+                &Item {
+                    padding: .9rem;
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    transition: all .3s ease;
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: var(--hoverBackground);
+
+                    }
+
+                }
+            }
+        }
+    }
+
+}

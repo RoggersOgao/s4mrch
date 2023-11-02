@@ -1,0 +1,20 @@
+@import "../mixin";
+
+.body {
+    display: flex;
+    height:auto;
+
+    .nav {
+        position: fixed;
+        top: 0;
+        z-index:10;
+        width:23.5rem;
+    }
+
+    .main {
+        flex: 1;
+        @include respond(tab-land){
+            margin-left: 0;
+        }
+    }
+}

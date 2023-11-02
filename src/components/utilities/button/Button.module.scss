@@ -1,0 +1,19 @@
+.button{
+    padding:.8rem 2rem;
+    display:flex;
+    align-items: center;
+    color:var(--defined-text-color);
+    gap:1rem;
+    background-color:var(--box-background-color);
+    border:none;
+    border-radius:.6rem;
+    justify-content: center;
+    transition:all .3s step-start;
+
+
+    &:hover{
+        background-color: var(--blue-color);
+        color:var(--text-white);
+        cursor:pointer;
+    }
+}

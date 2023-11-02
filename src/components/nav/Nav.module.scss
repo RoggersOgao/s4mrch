@@ -1,0 +1,128 @@
+@import "../../mixin";
+
+.container{
+    transition:all .3s ease-in-out;
+}
+.aside {
+    display:flex;
+    background-color: var(--box-background-color);
+    width: 23.5rem;
+    min-height: 100vh;
+    max-height: 100vh;
+    flex-direction: column;
+    
+
+    .avatar {
+        padding: 3rem 0 2rem 0;
+        display: flex;
+        justify-content: center;
+
+        .closeButton{
+            i{
+                font-size:2.4rem;
+                position:absolute;
+                color:var(--defined-text-color);
+                top:.5rem;
+                right:.5rem;
+                display:none;
+                transition:all .3s ease;
+
+                @media only screen and (max-width:1250px){
+                    display:block;
+                }
+
+                &:hover{
+                    color:var(--text-color);
+                    cursor:pointer;
+                }
+            }
+        }
+        
+
+        &Container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            &Left {
+                width: 4.5rem;
+                height: 4.5rem;
+                border-radius: 50%;
+                overflow: hidden;
+                .img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            &Right {
+                display:flex;
+                flex-direction:column;
+                h2 {
+                    display: flex;
+                    align-items: center;
+                    gap: .5rem;
+                    color: var(--defined-text-color);
+
+                    .icon {
+                        font-size: 1.2rem;
+                    }
+                }
+
+                p {
+                    padding: .5rem 0;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+    }
+
+    &Navigation {
+        flex:1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height:100%;
+        p {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        i {
+            font-size: 2.5rem;
+        }
+
+        .navItem {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: .6rem;
+            padding-left: 1.5rem;
+            
+            &:hover {
+                color: var(--blue-color);
+
+                p {
+                    background-color: rgba(rgb(32, 121, 255), 0.2);
+                }
+            }
+
+            p {
+                flex: 1;
+                padding: 1rem 0;
+                padding-left: .7rem;
+                border-radius: .4rem;
+
+            }
+
+
+        }
+
+        &Top {}
+
+        &Bottom {
+            
+        }
+    }
+}

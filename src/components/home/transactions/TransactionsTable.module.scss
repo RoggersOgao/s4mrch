@@ -1,0 +1,115 @@
+@import "../../../mixin";
+
+.container {
+    width: 95%;
+    margin: 0 auto;
+    overflow: hidden;
+
+    .closeBtn{
+      button{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        gap:1rem;
+        padding:.9rem;
+        background-color:var(--blue-color);
+        border-radius:.5rem;
+        border:none;
+        font-weight:600;
+        color: var(--text-white);
+        font-size:1.1rem;
+        border:.3px solid transparent;
+        transition: all .3s ease;
+        &:hover{
+          border:.3px solid var(--hoverBackground);
+          background:transparent;
+          cursor:pointer;
+        }
+        
+
+        i{
+          display:flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  
+    .tableTopSearchBar {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom:4rem;
+      align-items: center;
+    }
+  
+    .tableContainer{
+        overflow-x: auto;
+    }
+    .table {
+      overflow-x: auto; /* Use "auto" to make it scroll when content overflows */
+      border-collapse: collapse;
+      width: 100%;
+
+  
+      .tableRow {
+        // background: linear-gradient(45deg,#f8fff0, #ffffff, #f7ffff);
+        background-color: var(--box-background-color);
+        box-shadow: 0 3px 6px -3px rgba(34, 35, 38, 0.42);
+        padding: 1rem;
+        border-radius:1rem;
+  
+        &:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+        display: flex;
+        
+        .tableData {
+          flex:1;
+          text-align: left;
+          padding-right: 1rem;
+        //   padding: 8px;
+  
+          .topHeaderContent {
+            p {
+              font-size: 1rem;
+              font-weight: 600;
+              filter:opacity(.9);
+              white-space:nowrap;
+              color:var(--defined-text-color);
+            }
+          }
+  
+          .topHeaderDesc {
+            p {
+              /* Define styles for topHeaderDesc */
+              margin-top:1rem;
+            }
+          }
+        }
+      }
+    }
+
+    .navigationButtons{
+    margin-top:2rem;
+    display:flex;
+    justify-content: flex-end;
+    gap:1rem;
+    align-items: center;
+      
+      .buttonGroup{
+        display:flex;
+        button{
+          padding:.5rem;
+          border:none;
+          border-radius:0;
+          background-color:var(--blue-color);
+          color:var(--text-white);
+
+          &:disabled{
+            background-color:rgba(59, 59, 59, 0.607);
+          }
+        }
+      }
+    }
+  }
+  
