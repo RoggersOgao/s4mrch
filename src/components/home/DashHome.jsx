@@ -37,6 +37,7 @@ function DashHome() {
     }
   }, [isMobile, dispatch]);
   
+  console.log(state)
   return (
     <div className={styles.container}>
       <AnimatePresence>
@@ -65,7 +66,9 @@ function DashHome() {
           <div className={styles.top}>
             <div className={styles.titleContainer}>
               <div className={styles.left}>
-                <div
+
+                {active && (
+                  <div
                   className={styles.humburger}
                   onClick={() => dispatch(sideNavActive())}
                 >
@@ -73,6 +76,8 @@ function DashHome() {
                     <BiMenuAltLeft size={34} />
                   </i>
                 </div>
+                )}
+                
                 <h1 className={styles.title}>Dashboard</h1>
               </div>
               <div className={styles.right}>

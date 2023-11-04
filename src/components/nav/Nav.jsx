@@ -77,7 +77,7 @@ function Nav() {
           <div className={styles.avatar}>
             <div
               className={styles.closeButton}
-              onClick={() => dispatch(sideNavActive())}
+              onClick={() => dispatch(sideNavNotActive())}
             >
               <i>
                 <BsArrowBarLeft />

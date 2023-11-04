@@ -129,8 +129,8 @@ function HomeStats() {
       </div>
       <div className={styles.bottomStat}>
         <div className={styles.bottomStatLeft}>
-          <CandlestickChart />
           {/* candlestick */}
+          <CandlestickChart />
         </div>
         <div className={styles.bottomStatRight}>
           <Dashed />

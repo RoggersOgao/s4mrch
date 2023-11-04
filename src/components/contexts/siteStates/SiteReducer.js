@@ -3,19 +3,21 @@ const SiteReducer = (state, action) => {
     case "SIDENAV_ACTIVE":
       return {
         ...state,
-        sideNav_Active: !state.sideNav_Active,
+        sideNav_Active: true,
       };
     case "SIDENAV_NOT_ACTIVE":
       return {
+        ...state,
         sideNav_Active: false,
       };
     case "TRANSACTION_ACTIVE":
       return {
         ...state,
-        transactionsModalActive: !state.transactionsModalActive,
+        transactionsModalActive: true,
       };
     case "TRANSACTION_NOT_ACTIVE":
       return {
+        ...state,
         transactionsModalActive: false,
       };
 
