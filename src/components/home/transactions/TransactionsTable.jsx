@@ -8,7 +8,7 @@ import styles from "./TransactionsTable.module.scss"
 import { transactionNotActive } from "@/components/contexts/siteStates/SiteDispatchActions";
 import SiteContext from "@/components/contexts/siteStates/SiteContext";
 
-function TransactionsTable({DATA, COLUMNS}) {
+function TransactionsTable({DATA, COLUMNS, onClose}) {
   const homeContxt = useContext(SiteContext)
 
   const columns = useMemo(() => COLUMNS, []);
@@ -36,9 +36,11 @@ function TransactionsTable({DATA, COLUMNS}) {
    
   const { globalFilter } = state
   return (
-    <div className={styles.container}>
+   
+    <div
+     className={styles.container}>
       <div className={styles.closeBtn}>
-        <button onClick={()=> homeContxt.dispatch(transactionNotActive())}><i><IoMdClose /></i> Close Recent Transactions</button>
+        <button onClick={onClose}><i><IoMdClose /></i> Close Recent Transactions</button>
 
       </div>
         <div className={styles.tableTopSearchBar}>

@@ -6,6 +6,7 @@ import {
   sideNavActive,
   sideNavNotActive,
   transactionActive,
+  transactionNotActive,
 } from "../contexts/siteStates/SiteDispatchActions";
 import { BiDotsHorizontalRounded, BiMenuAltLeft } from "react-icons/bi";
 import Button from "../utilities/button/Button";
@@ -37,6 +38,9 @@ function DashHome() {
     }
   }, [isMobile, dispatch]);
   
+  const handleClose = () => {
+    dispatch(transactionNotActive())
+  }
   console.log(state)
   return (
     <div className={styles.container}>
@@ -101,18 +105,36 @@ function DashHome() {
         </motion.div>
       </AnimatePresence>
 
+<AnimatePresence>
       {/* latest transctions datatable container */}
       {state.transactionsModalActive && (
-        <div className={styles.transactionDatatable}>
+        <motion.div
+        initial={{
+          opacity:0,
+          x:1200
+        }}
+        animate={{
+          opacity:1,
+          x:0
+        }}
+        exit={{
+          opacity:0,
+          x:1200
+        }}
+        transition={{
+          duration:.3
+        }}
+        className={styles.transactionDatatable}>
           <div className={styles.container}>
             <TransactionsTable
               DATA={TRANSACTIONDATA}
               COLUMNS={TRANSACTIONCOLUMNS}
+              onClose={handleClose}
             />
           </div>
-        </div>
+        </motion.div>
       )}
-
+</AnimatePresence>
       {/* inventory inside data presentation and datatable */}
     </div>
   );
