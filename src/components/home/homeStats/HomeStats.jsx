@@ -68,7 +68,7 @@ function HomeStats() {
           <div className={styles.contentContainer}>
             <div className={styles.contentContainerLeft}>
               <div className={styles.title}>
-                <h3>{`Good ${timeOfDay}`} Janez!</h3>
+                <h3>{`Good ${timeOfDay}`} Roggers!</h3>
                 <p>Brief summary on what&apos;s happening today!</p>
               </div>
               <div className={styles.stats}>

@@ -15,6 +15,7 @@ import { BiDotsHorizontalRounded, BiMenuAltLeft } from "react-icons/bi";
 import Button from "../utilities/button/Button";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { BsQuestionCircle } from "react-icons/bs";
+import OrdersTable from "./table/OrdersTable";
 
 function Orders() {
   const { state, dispatch } = useContext(SiteContext);
@@ -64,7 +65,7 @@ function Orders() {
                   </div>
                 )}
 
-                <h1 className={styles.title}>Dashboard</h1>
+                <h1 className={styles.title}>Orders</h1>
               </div>
               <div className={styles.right}>
                 <Button onClick={() => dispatch(transactionActive())}>
@@ -78,7 +79,9 @@ function Orders() {
               </div>
             </div>
           </div>
-          <div className={styles.bottom}>bottom part</div>
+          <div className={styles.bottom}>
+            <OrdersTable />
+          </div>
         </motion.div>
       </AnimatePresence>
     </div>

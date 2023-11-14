@@ -95,7 +95,7 @@ function Nav() {
                 />
               </div>
               <div className={styles.avatarContainerRight}>
-                <h3>Janez Njoki</h3>
+                <h3>Roggers Ogao</h3>
                 <p>Admin</p>
               </div>
             </div>
