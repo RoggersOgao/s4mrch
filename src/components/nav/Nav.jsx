@@ -110,12 +110,14 @@ function Nav() {
                   <p>Dashboard</p>
                 </li>
               </Link>
+              <Link href="/orders">
               <li className={styles.navItem}>
                 <i>
                   <GiShoppingCart />
                 </i>
                 <p>Orders</p>
               </li>
+              </Link>
               <li className={styles.navItem}>
                 <i>
                   <PiCubeThin />

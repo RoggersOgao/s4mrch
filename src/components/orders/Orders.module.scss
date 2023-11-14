@@ -1,0 +1,80 @@
+@import "../../mixin";
+
+.container{
+    width:97%;
+    position: relative;
+    margin:0 auto;
+.home{
+    padding-top:4rem;
+    transition:all .4s ease;
+    @include respond(tab-port){
+        padding-top:2rem;
+    }
+    .top{
+        
+        .titleContainer{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @include respond(sm-tab-port){
+                flex-direction:column;
+                row-gap:1rem;
+            }
+            
+            .left{
+                @include respond(sm-tab-port){
+                    justify-self: start;
+                    align-self: start;
+                }
+                display:flex;
+                align-items: center;
+                gap: 1rem;
+                .humburger{
+                    // display:none;
+                    cursor: pointer;
+                    width:5rem;
+                    i{
+                        color:var(--defined-text-color);
+                    }
+                }
+                h1{
+                    font-size:3rem;
+                    color:var(--defined-text-color);
+                    font-weight: 800;
+                }
+            }
+            .right{
+                display:flex;
+                gap:2rem;
+
+                @include respond(phone){
+                    flex-direction: column;
+                }
+                .icon1{
+                    font-size:2.3rem;
+                }
+                .icon2{
+                    font-size:2rem;
+                }
+                .icon3{
+                    font-size:2rem;
+                }
+            }
+        }
+        .titleContainerActive{
+            flex-direction: column;
+            row-gap:1rem;
+        }
+        
+            
+    }
+    
+    // styling the component when the navigation is active
+
+    
+    .bottom{
+
+    }
+}
+}
