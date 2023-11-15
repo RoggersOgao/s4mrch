@@ -10,10 +10,13 @@
     --defined-text-color:rgb(0, 0, 0);
     --text-white:white;
     --background-color:#EFF3F4;
-    --hoverBackground: rgba(116, 116, 116, 0.398);
+    --hoverBackground: rgba(238, 244, 243, 0.398);
     --box-background-color:white;
     --overlay-icon-color:rgba(240, 240, 255, 0.38);
-    --border-color:rgb(57, 60, 64);
+    --border-color:rgb(221, 221, 221);
+    --yellow-color:rgb(218, 165, 44);
+    --dark-grey:rgb(102, 102, 102);
+    --hover-table:rgb(250, 253, 255);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,9 +27,12 @@
     --defined-text-color:rgb(255, 255, 255);
     --background-color:#212332;
     --box-background-color:#2A2D3E;
-    --hoverBackground: rgba(116, 116, 116, 0.398);
+    --hoverBackground: rgba(98, 132, 126, 0.398);
     --overlay-icon-color:rgba(49, 49, 73, 0.38);
     --border-color:rgb(57, 60, 64);
+    --yellow-color:rgb(218, 165, 44);
+    --dark-grey:rgb(126, 126, 102);
+    --hover-table:rgb(43, 48, 61);
   }
 }
 

@@ -1,94 +1,319 @@
 @import "../../../mixin";
 
-.container{
-    .orderContainer{
-        .orderList{
+.container {
+    .orderContainer {
+        .orderList {
 
-            &Item{
-                .content{
+            &Item {
+                .content {
                     background-color: var(--box-background-color);
-                    padding:.6rem 1rem;
+                    padding: .6rem 1rem;
                     border-radius: 1.5rem;
                     display: flex;
-                    gap:1rem;
+                    gap: 1rem;
                     align-items: stretch;
-                    h3{
-                        font-size:1.4rem;
-                        font-weight:600;
+                    transition: background-color .3s ease;
+
+                    &:hover {
+                        background-color: var(--hover-table);
                     }
-                    p{
-                        padding-top:.5rem;
-                        font-size:1.2rem;
+
+                    h3 {
+                        font-size: 1.4rem;
+                        font-weight: 600;
+                        color:var(--defined-text-color);
                     }
+
+                    p {
+                        padding-top: .4rem;
+                        font-size: 1.2rem;
+                    }
+
                     width:100%;
-                    .imageItem{
-                        flex:1;
-                        border-right:.3px solid var(--border-color);
-                    }
-                    .orderStts{
-                        flex:3;
-                        border-right:.3px solid var(--border-color);
-                        h3{
-                            font-size:1.4rem;
-                        }
-                        p{
-                            padding-top:.5rem;
-                            font-size:1.2rem;
-                        }
-                    }
-                    .orderDateItem{
-                        flex:3;
-                        border-right:.3px solid var(--border-color);
-                        .h3{
 
-                        }
-                        p{
+                    .imageItem {
+                        flex: 1;
+                        border-right: .3px solid var(--border-color);
+                    }
 
+                    .orderStts {
+                        flex: 3;
+                        border-right: .3px solid var(--border-color);
+
+                        h3 {
+                            font-size: 1.4rem;
+                        }
+
+                        p {
+                            color: var(--yellow-color);
+                            padding-top: .5rem;
+                            font-size: 1.2rem;
                         }
                     }
-                    .orderPyAmnt{
-                        flex:3;
-                        border-right:.3px solid var(--border-color);
-                        h3{
 
-                        }
-                        p{
-                            sup{
-                                font-size:1.2rem;
-                                font-weight:400;
+                    .orderDateItem {
+                        flex: 3;
+                        border-right: .3px solid var(--border-color);
+
+                        .h3 {}
+
+                        p {}
+                    }
+
+                    .orderPyAmnt {
+                        flex: 3;
+                        border-right: .3px solid var(--border-color);
+
+                        h3 {}
+
+                        p {
+                            sup {
+                                font-size: 1.2rem;
+                                font-weight: 400;
                             }
+
                             font-size:2.5rem;
                             font-weight:200;
                         }
                     }
-                    .orderCstmEmail{
-                        flex:3;
-                        border-right:.3px solid var(--border-color);
-                        h3{
 
-                        }
-                        p{
+                    .orderCstmEmail {
+                        flex: 3;
+                        border-right: .3px solid var(--border-color);
 
-                        }
+                        h3 {}
+
+                        p {}
                     }
-                    .orderOptions{
-                        flex:1;
-                        align-self: center;
-                        display:flex;
-                        justify-content: center;
-                        h3{
 
+                    .orderOptions {
+                        flex: 1;
+                        align-self: center;
+                        display: flex;
+                        justify-content: center;
+
+                        h3 {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 4rem;
+                            height: 4rem;
+                            border-radius: 50%;
+                            transition: all .3s ease;
+
+                            &:hover {
+                                background-color: var(--hoverBackground);
+                                cursor: pointer;
+                            }
                         }
                     }
 
                 }
 
-                .orderDetailsContainer{
-                    &Top{
-                        display:flex;
-                    }
-                    &Bottom{
+                // the container below
 
+                .orderDetailsContainer {
+                    width: 95%;
+                    margin: 0 auto;
+                    margin-top: 1rem;
+                    
+                    &Top {
+                        display: flex;
+                        align-items: center;
+                        width: 100%;
+                        gap: 1rem;
+                        padding:.5rem 1rem;
+                        background-color: var(--box-background-color);
+                        border-radius: 1rem 1rem 0 0;
+
+                        h3 {
+                            font-size: 1.3rem;
+                            color:var(--defined-text-color);
+                        }
+
+                        p {
+                            padding-top:.4rem;
+                            font-size: 1.1rem;
+                        }
+
+                        .customerName {
+                            display: flex;
+                            align-items: center;
+                            flex: 2;
+                            gap: 1rem;
+                            border-right: .3px solid var(--border-color);
+                            &Left {
+                                i {
+                                    font-size: 2.1rem;
+                                }
+                            }
+
+                            &Right {}
+                        }
+
+                        .orderStatus {
+                            display: flex;
+                            flex: 2;
+                            gap: 1rem;
+                            border-right: .3px solid var(--border-color);
+                            &Left {}
+
+                            &Right {
+                                p{
+                                    color:var(--yellow-color);
+                                }
+                            }
+                        }
+                        .shippingFee{
+                            flex:2;
+                            border-right: .3px solid var(--border-color);
+                            p {
+                                sup {
+                                    font-size: 1.2rem;
+                                    font-weight: 400;
+                                }
+    
+                                font-size:2.5rem;
+                                font-weight:200;
+                            }
+                        }
+                        .Address{
+                            flex:2;
+                            border-right: .3px solid var(--border-color);
+                        }
+                        .moreActions{
+                            flex:1;
+                            h3{
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                width: 4rem;
+                                height: 4rem;
+                                border-radius: 50%;
+                                transition: all .3s ease;
+        
+                                &:hover {
+                                    background-color: var(--hoverBackground);
+                                    cursor: pointer;
+                                }
+                            }
+
+                        }
+                    }
+
+                    &Bottom {
+                        
+width:100%;
+                        .table{
+width:100%;
+border-collapse: collapse;
+border:.3px solid var(--border-color);
+margin-top:1rem;
+thead{
+    tr{
+        th{
+            font-size:1.4rem;
+            font-weight:200;
+            padding:2rem 1rem 2rem 1rem;
+            color:var(--defined-text-color);
+            border-bottom:1px solid var(--yellow-color);
+            &:not(:last-child){
+                border-right: .3px solid var(--border-color);
+            }
+        }
+    }
+}
+tbody{
+    tr{
+        &:nth-child(odd){
+            background-color: var(--box-background-color);
+        }
+        .productUnitSize{
+            font-size:2.5rem;
+                            font-weight:200;
+        }
+        .productPayableAmount{
+            font-size:2.5rem;
+            font-weight: 200;
+        }
+        td{
+            padding:1rem;
+            font-size:1.2rem;
+            font-weight:500;
+            color:var(--dark-grey);
+            &:not(:last-child){
+                border-right: .3px solid var(--border-color);
+            }
+
+            sup{
+                font-size:1.2rem;
+                font-weight: 400;
+            }
+            .productContainer{
+                display:flex;
+                gap:1rem;
+                align-items: center;
+                &Left{
+                    display:flex;
+                    align-items: center;
+                    justify-content: center;
+                    width:6rem;
+                    height:6rem;
+                    overflow:hidden;
+
+                    .image{
+                        width:100%;
+                        height:100%;
+                        object-fit:cover;
+                    }
+                }
+                &Right{
+                    p{
+                        padding:.4rem 0;
+                    }
+                    h3{
+                        color:var(--defined-text-color);
+                    }
+                    .productProperties{
+                        display:flex;
+                        gap:2rem;
+                    }
+                }
+            }
+        }
+
+
+        
+    }
+}
+tfoot{
+    width:100%;
+    padding:0 3rem;
+
+    tr{
+        .subTotal{
+            text-align: right;
+        }
+        td{
+            padding:0 2rem;
+            padding-bottom:2rem;
+        }
+        h3{
+            padding-top:3rem;
+            font-size:1.5rem;
+            color:var(--defined-text-color);
+        }
+        p{
+            font-size:2.5rem;
+            font-weight:200;
+            sup{
+                font-size:1.2rem;
+                font-weight:400;
+            }
+        }
+    }
+}
+                        }
                     }
                 }
 

@@ -2,10 +2,26 @@ import React from "react";
 import styles from "./OrdersTable.module.scss";
 import Moment from "react-moment";
 import { BiDotsHorizontalRounded } from "react-icons/bi";
+import { LuArrowDownNarrowWide } from "react-icons/lu";
+
+import { LuUser2 } from "react-icons/lu";
 import Image from "next/image";
 
 function OrdersTable() {
   const myDate = new Date();
+
+  // function to convert the numbers to ksh currency
+  const formatAsCurrency = (number) => {
+    const formattedString = new Intl.NumberFormat('en-KE', {
+      style: 'currency',
+      currency: 'KES'
+    }).format(number);
+  
+    // Remove the currency prefix ("Ksh ")
+    const amountWithoutPrefix = formattedString.replace(/^Ksh\s/, '');
+  
+    return amountWithoutPrefix;
+  };
 
   return (
     <div className={styles.container}>
@@ -15,25 +31,27 @@ function OrdersTable() {
             <div className={styles.content}>
               <div className={styles.imageItem}>
                 <Image
-                    src="/images/paymentMade.svg"
-                    alt="payment"
-                    width={50}
-                    height={50}
-                    className={styles.image}
+                  src="/images/paymentMade.svg"
+                  alt="payment"
+                  width={50}
+                  height={50}
+                  className={styles.image}
                 />
               </div>
               <div className={styles.orderStts}>
                 <h3>SN000000001</h3>
-                <p>Payment made</p>
+                <p>Payment Completed</p>
               </div>
               <div className={styles.orderDateItem}>
                 <h3>Order Date</h3>
-                <p><Moment format="Do MMM - HH:mm">{myDate}</Moment></p>
+                <p>
+                  <Moment format="Do MMM - HH:mm">{myDate}</Moment>
+                </p>
               </div>
               <div className={styles.orderPyAmnt}>
                 <h3>Payable Amount</h3>
                 <p>
-                  <sup>ksh</sup>3,335.56
+                  <sup>ksh</sup>{formatAsCurrency(3335.56)}
                 </p>
               </div>
               <div className={styles.orderCstmEmail}>
@@ -42,7 +60,7 @@ function OrdersTable() {
               </div>
               <div className={styles.orderOptions}>
                 <h3>
-                  <BiDotsHorizontalRounded />
+                  <LuArrowDownNarrowWide />
                 </h3>
               </div>
             </div>
@@ -50,14 +68,26 @@ function OrdersTable() {
             <div className={styles.orderDetailsContainer}>
               <div className={styles.orderDetailsContainerTop}>
                 <div className={styles.customerName}>
-                  <div className={styles.customerNameLeft}>icon</div>
+                  <div className={styles.customerNameLeft}>
+                    <i>
+                      <LuUser2 />
+                    </i>
+                  </div>
                   <div className={styles.customerNameRight}>
                     <h3>Customer</h3>
                     <p>Roggers Ogao</p>
                   </div>
                 </div>
                 <div className={styles.orderStatus}>
-                  <div className={styles.orderStatusLeft}>icon</div>
+                  <div className={styles.orderStatusLeft}>
+                    <Image
+                      src="/images/paymentMade.svg"
+                      alt="payment"
+                      width={35}
+                      height={35}
+                      className={styles.image}
+                    />
+                  </div>
                   <div className={styles.orderStatusRight}>
                     <h3>Order status</h3>
                     <p>Payment Completed</p>
@@ -66,14 +96,14 @@ function OrdersTable() {
                 <div className={styles.shippingFee}>
                   <h3>Shipping Fee</h3>
                   <p>
-                    <sup>ksh</sup>300
+                    <sup>ksh</sup>{formatAsCurrency(300)}
                   </p>
                 </div>
-                <div className={styles.shippingFee}>
+                <div className={styles.Address}>
                   <h3>Address</h3>
                   <p>456 Oak St Nairobi</p>
                 </div>
-                <div className={styles.shippingFee}>
+                <div className={styles.moreActions}>
                   <h3>
                     <BiDotsHorizontalRounded />
                   </h3>
@@ -88,7 +118,7 @@ function OrdersTable() {
                       <th>Product Details</th>
                       <th>Unit Price</th>
                       <th>Quantity</th>
-                      <th>Payable Amount</th>
+                      <th>Amount</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -98,12 +128,18 @@ function OrdersTable() {
                       <td>
                         <div className={styles.productContainer}>
                           <div className={styles.productContainerLeft}>
-                            Image
+                            <Image
+                              src="/images/airforce.jpeg"
+                              alt="product name"
+                              width={50}
+                              height={50}
+                              className={styles.image}
+                          />
                           </div>
                           <div className={styles.productContainerRight}>
                             <p>Nike</p>
                             <h3>Free Air Force</h3>
-                            <div className={styles.productPropertis}>
+                            <div className={styles.productProperties}>
                               <p>S-42</p>
                               <p>Red</p>
                               <p>Other Props</p>
@@ -111,12 +147,12 @@ function OrdersTable() {
                           </div>
                         </div>
                       </td>
-                      <td>
-                        <sup>ksh</sup>3035.56
+                      <td className={styles.productUnitSize}>
+                        <sup>ksh</sup>{formatAsCurrency(3035.56)}
                       </td>
                       <td>1</td>
-                      <td>
-                        <sup>ksh</sup>3035.56
+                      <td className={styles.productPayableAmount}>
+                        <sup>ksh</sup>{formatAsCurrency(3035.56)}
                       </td>
                     </tr>
                   </tbody>
@@ -124,15 +160,21 @@ function OrdersTable() {
                     <tr>
                       <td colspan="2">
                         <h3>Merchandise</h3>
-                        <p><sup>ksh</sup>3035.56</p>
+                        <p>
+                          <sup>ksh</sup>{formatAsCurrency(3035.56)}
+                        </p>
                       </td>
                       <td>
                         <h3>Promo/Voucher</h3>
-                        <p><sup>ksh</sup>0</p>
+                        <p>
+                          <sup>ksh</sup>0
+                        </p>
                       </td>
-                      <td colSpan="3">
+                      <td colspan="3" className={styles.subTotal}>
                         <h3>SubTotal</h3>
-                        <p><sup>ksh</sup>33035.56</p>
+                        <p>
+                          <sup>ksh</sup>{formatAsCurrency(3335.56)}
+                        </p>
                       </td>
                     </tr>
                   </tfoot>

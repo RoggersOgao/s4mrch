@@ -57,6 +57,7 @@
         box-shadow: 0 3px 6px -3px rgba(34, 35, 38, 0.42);
         padding: 1rem;
         border-radius:1rem;
+        font-size:1.2rem;
   
         &:not(:last-child) {
           margin-bottom: 1rem;
@@ -71,7 +72,7 @@
   
           .topHeaderContent {
             p {
-              font-size: 1rem;
+              font-size: 1.3rem;
               font-weight: 600;
               filter:opacity(.9);
               white-space:nowrap;
