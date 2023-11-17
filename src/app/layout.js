@@ -1,4 +1,4 @@
-import { Inter } from 'next/font/google'
+import { Inter, Poppins } from 'next/font/google'
 import './globals.css'
 import styles from "./layout.module.scss"
 import Nav from '@/components/nav/Nav'
