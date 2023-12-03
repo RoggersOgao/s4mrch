@@ -21,17 +21,18 @@ import {
 import Link from "next/link";
 import { BsArrowBarLeft } from "react-icons/bs";
 import { useMediaQuery } from "react-responsive";
-
+import { usePathname } from "next/navigation";
 
 function Nav() {
 
-  
+  const router = usePathname()
+
   const { state, dispatch } = useContext(SiteContext);
   let active = state.sideNav_Active;
 
   const navRef = useRef();
   const isTabLand = useMediaQuery({ maxWidth: 1250 });
-  const [activeNav, setActiveNav] = useState(window.location.href.split("/")[3])
+  const [activeNav, setActiveNav] = useState(router.split("/")[1])
 
   const handleClickActiveNav = (type) => {
     setActiveNav(type)
