@@ -93,6 +93,12 @@
             font-size: 2.5rem;
         }
 
+        .activeNav{
+            color:var(--blue-color);
+            p{
+                background-color: rgba(rgb(32, 121, 255), 0.2);
+            }
+        }
         .navItem {
             display: flex;
             align-items: center;

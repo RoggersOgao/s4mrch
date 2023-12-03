@@ -14,8 +14,24 @@ function OrdersTable() {
   const myDate = new Date();
 
   const [activeList, setActiveList] = useState(Array(data.length).fill(false));
+  const [activeOrderStatusItem, setActiveOrderStatusItem] = useState(Array(data.length).fill(false));
+
+  const [activeOrderStatusIndex, setActiveOrderStatusIndex] = useState(null)
+
   const [activeIndex, setActiveIndex] = useState(null);
+
+  // activeStatusDropdown ref
+  const collapsibleOrderStatusRef = useRef(null)
   const collapsibleRef = useRef(null);
+
+
+  const handleCloseOrderStatusCollapsible = (index) => {
+    setActiveOrderStatusItem((prevActiveList) =>
+      prevActiveList.map((active, i) => (i === index ? !active : false))
+    );
+    setActiveOrderStatusIndex(index);
+  };
+
 
   const handleCloseCollapsible = (index) => {
     setActiveList((prevActiveList) =>
@@ -25,6 +41,18 @@ function OrdersTable() {
   };
 
   useEffect(() => {
+
+
+    const handleClickDropdownStatus = (event) => {
+      if(
+        collapsibleOrderStatusRef.current &&
+        !collapsibleOrderStatusRef.current?.contains(event.target) &&
+        activeOrderStatusIndex !== null
+      ){
+        setActiveOrderStatusItem(Array(data.length).fill(false));
+        setActiveOrderStatusIndex(null)
+      }
+    }
     const handleClickOutside = (event) => {
       if (
         collapsibleRef.current &&
@@ -35,14 +63,18 @@ function OrdersTable() {
         setActiveList(Array(data.length).fill(false));
         setActiveIndex(null);
       }
+
     };
 
     document.addEventListener("click", handleClickOutside);
-
+    document.addEventListener("click", handleClickDropdownStatus)
     return () => {
       document.removeEventListener("click", handleClickOutside);
+      document.removeEventListener("click", handleClickDropdownStatus)
     };
-  }, [activeIndex]);
+  }, [activeIndex, activeOrderStatusIndex]);
+
+
 
   // function to convert the numbers to ksh currency
   const formatAsCurrency = (number) => {
@@ -144,10 +176,9 @@ function OrdersTable() {
                 {activeList[index] && (
                   <motion.div
                     initial={{
-                      scaleX: 0,
                       opacity: 0
                     }}
-                    animate={{ scaleX: 1, opacity:1 }}
+                    animate={{ opacity:1 }}
                     transition={{ delay: .3 }}
                     exit={{ scaleX: 0, opacity:0 }}
                     style={{transformOrigin:"center"}}
@@ -196,10 +227,32 @@ function OrdersTable() {
                         <h3>Address</h3>
                         <p>{item.billingAddress}</p>
                       </div>
-                      <div className={styles.moreActions}>
+                      <div className={styles.moreActions} onClick={() => handleCloseOrderStatusCollapsible(index)}>
                         <h3>
                           <BiDotsHorizontalRounded />
                         </h3>
+
+                        <div className={styles.dropdownContainer}>
+
+                          {activeOrderStatusItem[index] && (
+                            <div ref={collapsibleOrderStatusRef}>
+                            <div className={styles.dropdownHeader}>
+                            <p>Update Status</p>
+                            
+                          </div>
+
+                          <div className={styles.dropdownContent}>
+                            <ul>
+                              <li onClick={()=> console.log("hey there")}>Accept Order</li>
+                              <li>In Route</li>
+                              <li>Delivered</li>
+                              <li>Completed</li>
+                            </ul>
+                          </div>
+                          </div>
+                          )}
+                          
+                        </div>
                       </div>
                     </div>
                     <div className={styles.orderDetailsContainerBottom}>

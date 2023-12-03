@@ -22,12 +22,20 @@ import Link from "next/link";
 import { BsArrowBarLeft } from "react-icons/bs";
 import { useMediaQuery } from "react-responsive";
 
+
 function Nav() {
+
+  
   const { state, dispatch } = useContext(SiteContext);
   let active = state.sideNav_Active;
 
   const navRef = useRef();
   const isTabLand = useMediaQuery({ maxWidth: 1250 });
+  const [activeNav, setActiveNav] = useState(window.location.href.split("/")[3])
+
+  const handleClickActiveNav = (type) => {
+    setActiveNav(type)
+  }
 
   useEffect(() => {
     const handleMouseDown = (e) => {
@@ -46,7 +54,6 @@ function Nav() {
       // If max-width is greater than 1250px, disable the "mousedown" event listener
       document.removeEventListener("mousedown", handleMouseDown);
     }
-
     return () => {
       // Cleanup: remove the event listener when the component unmounts
       document.removeEventListener("mousedown", handleMouseDown);
@@ -103,7 +110,10 @@ function Nav() {
           <ul className={styles.asideNavigation}>
             <div className={styles.sideNavigationTop}>
               <Link href="/">
-                <li className={styles.navItem}>
+                <li 
+                onClick={()=> handleClickActiveNav("dashboard")}
+                className={activeNav === 'dashboard' ? cls(styles.navItem, styles.activeNav) : styles.navItem}
+                >
                   <i>
                     <HiOutlineHomeModern />
                   </i>
@@ -111,38 +121,56 @@ function Nav() {
                 </li>
               </Link>
               <Link href="/orders">
-              <li className={styles.navItem}>
+              <li
+              onClick={()=> handleClickActiveNav("orders")}
+              className={activeNav === 'orders' ? cls(styles.navItem, styles.activeNav) : styles.navItem}
+              >
                 <i>
                   <GiShoppingCart />
                 </i>
                 <p>Orders</p>
               </li>
               </Link>
-              <li className={styles.navItem}>
+              <li 
+               onClick={()=> handleClickActiveNav("product")}
+               className={activeNav === 'product' ? cls(styles.navItem, styles.activeNav) : styles.navItem}
+              >
                 <i>
                   <PiCubeThin />
                 </i>
                 <p>Products</p>
               </li>
-              <li className={styles.navItem}>
+              <li 
+               onClick={()=> handleClickActiveNav("categories")}
+               className={activeNav === 'categories' ? cls(styles.navItem, styles.activeNav) : styles.navItem}
+              >
                 <i>
                   <RiListCheck2 />
                 </i>
                 <p>Categories</p>
               </li>
-              <li className={styles.navItem}>
+              <li
+               onClick={()=> handleClickActiveNav("messages")}
+               className={activeNav === 'messages' ? cls(styles.navItem, styles.activeNav) : styles.navItem}
+              >
                 <i>
                   <BiMessage />
                 </i>
                 <p>Messages</p>
               </li>
-              <li className={styles.navItem}>
+              <li 
+               onClick={()=> handleClickActiveNav("customers")}
+               className={activeNav === 'customers' ? cls(styles.navItem, styles.activeNav) : styles.navItem}
+              >
                 <i>
                   <AiOutlineUser />
                 </i>
                 <p>Customers</p>
               </li>
-              <li className={styles.navItem}>
+              <li 
+               onClick={()=> handleClickActiveNav("brands")}
+               className={activeNav === 'brands' ? cls(styles.navItem, styles.activeNav) : styles.navItem}
+              >
                 <i>
                   <TbBrandDenodo />
                 </i>
@@ -150,13 +178,19 @@ function Nav() {
               </li>
             </div>
             <div className={styles.sideNavigationBottom}>
-              <li className={styles.navItem}>
+              <li 
+               onClick={()=> handleClickActiveNav("settings")}
+               className={activeNav === 'settings' ? cls(styles.navItem, styles.activeNav) : styles.navItem}
+              >
                 <i>
                   <CiSettings />
                 </i>
                 <p>Settings</p>
               </li>
-              <li className={styles.navItem}>
+              <li
+               onClick={()=> handleClickActiveNav("logout")}
+               className={activeNav === 'logout' ? cls(styles.navItem, styles.activeNav) : styles.navItem}
+              >
                 <i>
                   <IoLogOutOutline />
                 </i>

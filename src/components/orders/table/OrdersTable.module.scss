@@ -1,15 +1,19 @@
 @import "../../../mixin";
 
 .container {
-    
+
     .orderContainer {
         transition: all .3s ease-in-out;
+
         .orderList {
             transition: all .3s ease-in-out;
+            list-style: none;
+
             &Item {
-                &:not(:last-child){
-                    margin-bottom:1rem;
+                &:not(:last-child) {
+                    margin-bottom: 1rem;
                 }
+
                 .content {
                     background-color: var(--box-background-color);
                     padding: .6rem 1rem;
@@ -39,11 +43,13 @@
                     .imageItem {
                         flex: 1;
                         border-right: .3px solid var(--border-color);
+                        min-width: 7rem;
                     }
 
                     .orderStts {
                         flex: 3;
                         border-right: .3px solid var(--border-color);
+                        min-width: 14rem;
 
                         h3 {
                             font-size: 1.4rem;
@@ -53,13 +59,14 @@
                             color: var(--blue-color);
                             padding-top: .5rem;
                             font-size: 1.2rem;
-                            font-weight:400;
+                            font-weight: 400;
                         }
                     }
 
                     .orderDateItem {
                         flex: 3;
                         border-right: .3px solid var(--border-color);
+                        min-width: 14rem;
 
                         .h3 {}
 
@@ -69,12 +76,14 @@
                     .orderPyAmnt {
                         flex: 3;
                         border-right: .3px solid var(--border-color);
+                        min-width: 14rem;
 
                         h3 {}
 
                         p {
-                            font-size:2.5rem;
-                            font-weight:200;
+                            font-size: 2.5rem;
+                            font-weight: 200;
+
                             sup {
                                 font-size: 1.2rem;
                                 font-weight: 400;
@@ -86,6 +95,7 @@
                     .orderCstmEmail {
                         flex: 3;
                         border-right: .3px solid var(--border-color);
+                        min-width: 20rem;
 
                         h3 {}
 
@@ -97,6 +107,7 @@
                         align-self: center;
                         display: flex;
                         justify-content: center;
+                        min-width: 7rem;
 
                         h3 {
                             display: flex;
@@ -120,10 +131,11 @@
 
                 .orderDetailsContainer {
                     width: 95%;
-                    transition:all .3s ease-in-out;
+                    transition: all .3s ease-in-out;
                     margin: 0 auto;
                     margin-top: 1rem;
-                    
+
+
 
                     &Top {
                         display: flex;
@@ -166,22 +178,22 @@
                             gap: 1rem;
                             border-right: .3px solid var(--border-color);
 
-                            &Left {
-                            }
-                            
+                            &Left {}
+
                             &Right {
-                                
+
                                 p {
                                     color: var(--blue-color);
-                                    font-weight:400;
+                                    font-weight: 400;
                                 }
                             }
                         }
 
-                        .paymentMethod{
+                        .paymentMethod {
                             flex: 2;
                             border-right: .3px solid var(--border-color);
                         }
+
                         .shippingFee {
                             flex: 2;
                             border-right: .3px solid var(--border-color);
@@ -220,6 +232,37 @@
                                 }
                             }
 
+                            .dropdownContainer {
+                                position: absolute;
+                                background: rgba(0, 0, 0, 0.25);
+                                box-shadow: 0 8px 32px 0 rgba(black, 0.37);
+                                backdrop-filter: blur(12px);
+                                -webkit-backdrop-filter: blur(12px);
+                                border-radius: 10px;
+                                border: 1px solid rgba(255, 255, 255, 0.18);
+                                .dropdownHeader{
+                                    padding:1rem 2rem;
+                                    p{
+                                        font-weight:600;
+                                        color:var(--defined-text-color);
+                                    }
+                                }
+                                .dropdownContent{
+                                    ul{
+                                        list-style-type:none;
+                                        li{
+                                            padding:1rem;
+                                            font-size:1.2rem;
+
+                                            &:hover{
+                                                background-color:var(--border-color);
+                                                cursor:pointer;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
                         }
                     }
 
@@ -237,7 +280,7 @@
                                 tr {
                                     th {
                                         font-size: 1.4rem;
-                                        font-weight: 200;
+                                        font-weight: 300;
                                         padding: 2rem 1rem 2rem 1rem;
                                         color: var(--defined-text-color);
                                         border-bottom: 1px solid var(--blue-color);
@@ -308,7 +351,7 @@
 
                                                 h3 {
                                                     color: var(--defined-text-color);
-                                                    font-size:1.3rem;
+                                                    font-size: 1.3rem;
                                                 }
 
                                                 .productProperties {
@@ -336,6 +379,7 @@
                                     td {
                                         padding: 0 2rem;
                                         padding-bottom: 2rem;
+
                                         // border-top:1px solid var(--blue-color);
                                         &:not(:last-child) {
                                             border-right: .3px solid var(--border-color);
@@ -345,12 +389,12 @@
                                     h3 {
                                         padding-top: 3rem;
                                         font-size: 1.4rem;
-                                        color:var(--defined-text-color);
+                                        color: var(--defined-text-color);
                                     }
 
                                     p {
                                         font-size: 2.5rem;
-                                        font-weight:200;
+                                        font-weight: 200;
                                         // color:var(--dark-grey);
 
                                         sup {
