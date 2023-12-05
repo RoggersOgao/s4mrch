@@ -132,15 +132,18 @@ function Nav() {
                 <p>Orders</p>
               </li>
               </Link>
+              <Link href="/products">
               <li 
-               onClick={()=> handleClickActiveNav("product")}
-               className={activeNav === 'product' ? cls(styles.navItem, styles.activeNav) : styles.navItem}
+               onClick={()=> handleClickActiveNav("products")}
+               className={activeNav === 'products' ? cls(styles.navItem, styles.activeNav) : styles.navItem}
               >
                 <i>
                   <PiCubeThin />
                 </i>
                 <p>Products</p>
               </li>
+              </Link>
+              <Link href="/categories">
               <li 
                onClick={()=> handleClickActiveNav("categories")}
                className={activeNav === 'categories' ? cls(styles.navItem, styles.activeNav) : styles.navItem}
@@ -150,6 +153,9 @@ function Nav() {
                 </i>
                 <p>Categories</p>
               </li>
+              </Link>
+
+              <Link href="/messages">
               <li
                onClick={()=> handleClickActiveNav("messages")}
                className={activeNav === 'messages' ? cls(styles.navItem, styles.activeNav) : styles.navItem}
@@ -159,6 +165,9 @@ function Nav() {
                 </i>
                 <p>Messages</p>
               </li>
+              </Link>
+
+              <Link href="/customers">
               <li 
                onClick={()=> handleClickActiveNav("customers")}
                className={activeNav === 'customers' ? cls(styles.navItem, styles.activeNav) : styles.navItem}
@@ -168,6 +177,8 @@ function Nav() {
                 </i>
                 <p>Customers</p>
               </li>
+              </Link>
+              <Link href="/brands">
               <li 
                onClick={()=> handleClickActiveNav("brands")}
                className={activeNav === 'brands' ? cls(styles.navItem, styles.activeNav) : styles.navItem}
@@ -177,8 +188,10 @@ function Nav() {
                 </i>
                 <p>Brands</p>
               </li>
+              </Link>
             </div>
             <div className={styles.sideNavigationBottom}>
+              <Link href="/settings">
               <li 
                onClick={()=> handleClickActiveNav("settings")}
                className={activeNav === 'settings' ? cls(styles.navItem, styles.activeNav) : styles.navItem}
@@ -188,6 +201,7 @@ function Nav() {
                 </i>
                 <p>Settings</p>
               </li>
+              </Link>
               <li
                onClick={()=> handleClickActiveNav("logout")}
                className={activeNav === 'logout' ? cls(styles.navItem, styles.activeNav) : styles.navItem}
