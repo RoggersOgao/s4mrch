@@ -16,11 +16,14 @@ function AddNew() {
                 id="productName"
                 autoComplete="off"
                 placeholder="Nike Air Force"
+                className={styles.productName}
               />
             </div>
-            {/* categories */}
+           {/* category group */}
+           <div className={styles.categoryGroups}>
+             {/* categories */}
 
-            <div className={styles.formGroup}>
+             <div className={styles.formGroup}>
               <label htmlFor="category">
                 Category{" "}
                 <span>
@@ -31,6 +34,29 @@ function AddNew() {
                 <input
                   className={styles.dropdownButton}
                   id="category"
+                  placeholder="shoes"
+                />
+                <span>
+                  <FaAngleDown />
+                </span>
+                <div className={styles.dropdownList}>
+                  <ul>
+                    <li>Sneakers</li>
+                    <li>Electronics</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* sub category */}
+            <div className={styles.formGroup}>
+              <label htmlFor="subCategory">
+                Sub Category{" "}
+              </label>
+              <div className={styles.categoryDropdown}>
+                <input
+                  className={styles.dropdownButton}
+                  id="subCategory"
                   placeholder="sneakers"
                 />
                 <span>
@@ -44,6 +70,7 @@ function AddNew() {
                 </div>
               </div>
             </div>
+           </div>
             {/* brand  */}
             <div className={styles.formGroup}>
               <label htmlFor="brand">Brand</label>

@@ -141,6 +141,11 @@
                         padding:1rem .4rem .7rem .4rem;
                         cursor:pointer;
                         border-bottom: 3px solid transparent;
+                        transition: color .3s ease;
+
+                        &:hover{
+                            color:var(--defined-text-color);
+                        }
 
                     }
                     .selectedButton{
@@ -149,6 +154,10 @@
                         color:var(--blue-color);
                         position:relative;
                         z-index:4;
+
+                        &:hover{
+                            color:var(--blue-color);
+                        }
                     }
                 }
             }
