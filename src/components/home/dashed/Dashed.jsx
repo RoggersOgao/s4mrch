@@ -40,7 +40,7 @@ function Dashed() {
         height: 350,
         type: 'line',
         stacked: false,
-        background: light ? '#fff' : '#2A2D3E'
+        background: light ? '#fff' : '#363a50'
       },
       theme: {
         mode: light ? "light" : "dark",
@@ -59,14 +59,14 @@ function Dashed() {
         style:{
             fontSize:  '12px',
             fontFamily:  undefined,
-            color:  light ? "#585858" : '#999999'
+            color:  light ? "#585858" : '#bdbdbd'
         }
       },
       xaxis: {
         categories: [2019, 2020, 2021, 2022, 2023],
         labels:{
             style: {
-                colors: ["#5e6277", "#5e6277", "#5e6277","#5e6277","#5e6277","#5e6277","#5e6277","#5e6277","#5e6277","#5e6277","#5e6277","#5e6277"],
+                colors: ["#bdbdbd", "#bdbdbd", "#bdbdbd","#bdbdbd","#bdbdbd","#bdbdbd","#bdbdbd","#bdbdbd","#bdbdbd","#bdbdbd","#bdbdbd","#bdbdbd"],
                 fontSize: '10px',
                 fontWeight: 400,
                 cssClass: 'apexcharts-xaxis-label',

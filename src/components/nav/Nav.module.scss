@@ -6,6 +6,7 @@
 .aside {
     display:flex;
     background-color: var(--box-background-color);
+    box-shadow:0 0 10px var(--shadow-color);
     width: 23.5rem;
     min-height: 100vh;
     max-height: 100vh;

@@ -15,6 +15,7 @@
 
         .left {
             background-color: var(--box-background-color);
+            box-shadow:0 0 10px var(--shadow-color);
             padding: 1rem 2rem;
             flex: 5;
             border-radius: 1rem;
@@ -107,6 +108,7 @@
 
             .box {
                 background-color: var(--box-background-color);
+                box-shadow:0 0 10px var(--shadow-color);
                 border-radius: 1rem;
 
             }
@@ -115,6 +117,7 @@
                 position: relative;
                 display: flex;
                 background-color: var(--box-background-color);
+                box-shadow:0 0 10px var(--shadow-color);
                 border-radius: 1rem;
                 padding: 2rem;
                 justify-content: space-between;
@@ -193,12 +196,14 @@
             padding:1rem;
             border-radius: 1rem;
             background-color: var(--box-background-color);
+            box-shadow:0 0 10px var(--shadow-color);
         }
         &Right{
             flex:4;
             padding:1rem;
             border-radius: 1rem;
             background-color: var(--box-background-color);
+            box-shadow:0 0 10px var(--shadow-color);
         }
     }
 }

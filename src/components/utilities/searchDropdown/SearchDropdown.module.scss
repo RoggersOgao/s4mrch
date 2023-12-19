@@ -1,0 +1,80 @@
+@import "../../../mixin";
+
+.container {
+    width: 100%;
+
+    .dropdown {
+        position: relative;
+
+        label {
+            width: 12rem;
+            font-size: 1.2rem;
+            // font-family: inherit;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--defined-text-color);
+            display: flex;
+            align-items: center;
+            gap: .9rem;
+
+            span {
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                font-size: 1.2rem;
+                color: var(--dark-grey);
+            }
+        }
+
+        &Label {
+            width: 100%;
+
+            button {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                padding: 1.1rem 1rem;
+                justify-content: space-between;
+                border: none;
+                background-color: var(--box-background-color);
+                border: .3px solid var(--shadow-color);
+                border-radius:.5rem;
+                // font-family: inherit;
+                color: var(--dark-grey);
+
+                &:focus {
+                    outline: none;
+                    border: .3px solid rgba(100, 152, 255, 0.808);
+                }
+            }
+        }
+
+        &List {
+            position: absolute;
+            width: 100%;
+            top: 7rem;
+            z-index: 3;
+
+            ul {
+                width: 100%;
+                list-style: none;
+                background-color: var(--box-background-color);
+                border-radius: .8rem;
+                overflow: hidden;
+                box-shadow: 0 0 12px var(--shadow-color);
+
+                li {
+                    padding: 1.1rem 1rem;
+                    width: 100%;
+                    font-size: 1.3rem;
+
+                    &:hover {
+                        background-color: var(--shadow-color);
+                        box-shadow: 0 0 6px var(--shadow-color);
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

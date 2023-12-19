@@ -59,9 +59,9 @@
       }
     </style>
     <linearGradient id="linear-gradient" x1="56.08" y1="291.47" x2="214.38" y2="56.77" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#2a2d3e"/>
-      <stop offset=".59" stop-color="#262939"/>
-      <stop offset="1" stop-color="#212332"/>
+      <stop offset="0" stop-color="#363a50"/>
+      <stop offset=".59" stop-color="#363a50"/>
+      <stop offset="1" stop-color="#262939"/>
     </linearGradient>
   </defs>
   <g id="Layer_1-2" data-name="Layer 1">

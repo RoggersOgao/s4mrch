@@ -1,11 +1,12 @@
-import { Inter, Open_Sans} from 'next/font/google'
+import { Roboto } from 'next/font/google'
 import './globals.css'
 import styles from "./layout.module.scss"
 import Nav from '@/components/nav/Nav'
 import { SiteProvider } from '@/components/contexts/siteStates/SiteContext'
 import cls from "classnames";
-const inter = Inter({ subsets: ['latin'] })
-const opensans = Open_Sans({ subsets: ['latin'], weight: ['300', '400', '500', '700', '800']})
+// const inter = Inter({ subsets: ['latin'] })
+const roboto = Roboto({ subsets: ['latin'], weight: ['100','300','400','500', '700', '900']})
+
 
 
 export const metadata = {
@@ -13,11 +14,12 @@ export const metadata = {
   description: "Next gen Shopping App",
 }
 
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
      <SiteProvider>
-      <body className={cls(opensans.className, styles.body)}>
+      <body className={cls(roboto.className, styles.body)}>
         <div className={styles.nav}>
           <Nav />
         </div>

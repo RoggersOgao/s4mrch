@@ -85,7 +85,7 @@
             width:70%;
             margin:2rem 0;
             p{
-                font-size:1.27rem;
+                font-size:1.3rem;
                 line-height:2rem;
                 font-weight:500;
             }
@@ -143,7 +143,8 @@
                     input{
                         width:100%;
                         padding:.8rem 2rem;
-                        border:.3px solid var(--box-background-color);
+                        border:.3px solid var(--shadow-color);
+                        border-radius:.7rem;
                         background-color:var(--box-background-color);
                     }
                 }

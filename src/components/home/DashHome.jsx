@@ -65,6 +65,11 @@ function DashHome() {
           className={styles.home}
           style={{
             marginLeft: active ? 0 : state.sideNav_Active ? "23.5rem" : 0,
+            width: active
+              ? "100%"
+              : state.sideNav_Active
+              ? "calc(100% - 23.5rem"
+              : "100%",
           }}
         >
           <div className={styles.top}>
@@ -109,6 +114,14 @@ function DashHome() {
       {/* latest transctions datatable container */}
       {state.transactionsModalActive && (
         <motion.div
+        style={{
+          marginLeft: active ? 0 : state.sideNav_Active ? "23.5rem" : 0,
+          width: active
+            ? "100%"
+            : state.sideNav_Active
+            ? "calc(100% - 23.5rem"
+            : "100%",
+        }}
         initial={{
           opacity:0,
           x:1200

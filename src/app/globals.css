@@ -5,34 +5,40 @@
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
   
-    --text-color:#585858;
+
+    --text-color:#777777;
     --blue-color:#3995e9;
     --defined-text-color:rgb(0, 0, 0);
     --text-white:white;
-    --background-color:#EFF3F4;
+    --background-color:white;
     --hoverBackground: rgba(238, 244, 243, 0.398);
-    --box-background-color:white;
+    --box-background-color:#ffffff;
     --overlay-icon-color:rgba(240, 240, 255, 0.38);
     --border-color:rgb(221, 221, 221);
     --yellow-color:rgb(218, 165, 44);
     --dark-grey:rgb(102, 102, 102);
-    --hover-table:rgb(250, 253, 255);
+    --hover-table:rgb(244, 249, 245);
+    --shadow-color:rgb(220, 220, 220);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text-color:#999999;
+    --text-color:#bdbdbd;
     --blue-color:#3995e9;
     --text-white:white;
     --defined-text-color:rgb(255, 255, 255);
-    --background-color:#212332;
-    --box-background-color:#2A2D3E;
+    
+    /* --background-color:#212332;  */
+    /* --box-background-color:#2A2D3E; */
+     --background-color:#1f202d;
+    --box-background-color:#2a2d41;
     --hoverBackground: rgba(98, 132, 126, 0.398);
     --overlay-icon-color:rgba(49, 49, 73, 0.38);
     --border-color:rgb(57, 60, 64);
     --yellow-color:rgb(218, 165, 44);
     --dark-grey:rgb(102, 121, 126);
     --hover-table:rgb(43, 48, 61);
+    --shadow-color:rgba(27, 29, 37, 0.13);
   }
 }
 
@@ -45,7 +51,6 @@
 html,
 body {
   width: 100%;
-  overflow-x: hidden;
   font-size:10px;
 }
 

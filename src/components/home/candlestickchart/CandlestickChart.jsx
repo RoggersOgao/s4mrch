@@ -43,7 +43,7 @@ function CandlestickChart() {
         chart: {
           height: 350,
           type: 'line',
-          background: light ? '#fff' : '#2A2D3E'
+          background: light ? '#fff' : '#363a50'
         },
         stroke: {
           width: [0, 4]
@@ -53,7 +53,7 @@ function CandlestickChart() {
           style: {
             fontSize:  '12px',
             fontFamily:  undefined,
-            color:  light ? "#585858" : '#999999'
+            color:  light ? "#585858" : '#bdbdbd'
           },
         },
         dataLabels: {
@@ -107,7 +107,7 @@ function CandlestickChart() {
             minHeight: undefined,
             maxHeight: 120,
             style: {
-                colors: ["#5e6277", "#5e6277", "#5e6277","#5e6277","#5e6277","#5e6277","#5e6277","#5e6277","#5e6277","#5e6277","#5e6277","#5e6277"],
+                colors: ["#bdbdbd", "#bdbdbd", "#bdbdbd","#bdbdbd","#bdbdbd","#bdbdbd","#bdbdbd","#bdbdbd","#bdbdbd","#bdbdbd","#bdbdbd","#bdbdbd"],
                 fontSize: '10px',
                 fontWeight: 400,
                 cssClass: 'apexcharts-xaxis-label',
