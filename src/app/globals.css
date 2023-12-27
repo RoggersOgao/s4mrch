@@ -15,6 +15,7 @@
     --box-background-color:#ffffff;
     --overlay-icon-color:rgba(240, 240, 255, 0.38);
     --border-color:rgb(221, 221, 221);
+    --box-border:rgb(194, 203, 209);
     --yellow-color:rgb(218, 165, 44);
     --dark-grey:rgb(102, 102, 102);
     --hover-table:rgb(244, 249, 245);
@@ -27,11 +28,12 @@
     --blue-color:#3995e9;
     --text-white:white;
     --defined-text-color:rgb(255, 255, 255);
+    --box-border:rgb(34, 42, 47);
     
     /* --background-color:#212332;  */
     /* --box-background-color:#2A2D3E; */
-     --background-color:#1f202d;
-    --box-background-color:#2a2d41;
+     --background-color:#010409;
+    --box-background-color:#0C0F15;
     --hoverBackground: rgba(98, 132, 126, 0.398);
     --overlay-icon-color:rgba(49, 49, 73, 0.38);
     --border-color:rgb(57, 60, 64);

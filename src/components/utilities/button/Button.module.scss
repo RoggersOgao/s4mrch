@@ -6,11 +6,12 @@
     text-transform: capitalize;
     gap:1rem;
     background-color:var(--box-background-color);
-    border:none;
+    // border:none;
     border-radius:.6rem;
     justify-content: center;
     transition:all .3s step-start;
     border:.3px solid var(--shadow-color);
+    border:.3px solid var(--box-border);
 
 
     &:hover{
