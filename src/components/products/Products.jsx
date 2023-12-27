@@ -116,10 +116,7 @@ function Products() {
             </div>
             <div className={styles.titleDescription}>
               <p>
-                In the order details section, you can review and manage all
-                orders with their details. You can view and edit information
-                such as Delivery Status. All changes made to this field are
-                updated in real time with your customers, Please be careful.
+              Welcome to Product Management! This central hub empowers you to effortlessly oversee and refine your inventory. Update product details, manage orders, and maintain accuracy in real time. Your commitment to precision ensures a seamless shopping experience for your customers. Happy managing!
               </p>
             </div>
 
