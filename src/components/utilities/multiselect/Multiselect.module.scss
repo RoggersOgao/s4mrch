@@ -33,26 +33,64 @@
                 width: 100%;
                 display: flex;
                 align-items: center;
-                padding: 1.1rem 1rem;
+                padding: .61rem 1rem;
                 justify-content: space-between;
                 border: none;
                 background-color: var(--box-background-color);
                 border: .3px solid var(--shadow-color);
                 border-radius:.5rem;
+                position: relative;
+
                 // font-family: inherit;
                 color: var(--dark-grey);
+
+                ul{
+                    display:flex;
+                    flex-wrap: wrap;
+                    gap:1rem;
+                    li{
+                        padding:.5rem;
+                        background:linear-gradient(to left,  rgb(0, 50, 175),rgb(0, 153, 255));
+                        display:flex;
+                        border-radius: .6rem;
+                        align-items: center;
+                        justify-content: center;
+                        position:relative;
+                        color:var(--text-white);
+
+                        span{
+                            position:absolute;
+                            right:-.4rem;
+                            top:-.4rem;
+                            width: 1.2rem;
+                            height:1.2rem;
+                            border-radius:50%;
+                            background-color:var(--text-color);
+                            display:flex;
+                            align-items: center;
+                            justify-content: center;
+                            border:.3px solid var(--text-color);
+                            cursor: pointer;
+                        }
+
+
+                    }
+                }
 
                 &:focus {
                     outline: none;
                     border: .3px solid rgba(100, 152, 255, 0.808);
                 }
+
+
+               
             }
         }
 
         &__list {
             position: absolute;
             width: 100%;
-            top: 7rem;
+            // top: 8rem;
             z-index: 3;
 
             ul {
@@ -64,9 +102,11 @@
                 display:grid;
                 grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
                 gap:.9rem;
+                padding-bottom:1rem;
                 
                 li {
                     background-color: var(--box-background-color);
+                    box-shadow: 0 0 4px rgba(0, 0, 0, 0.285);
                     padding:.7rem .3rem;
                     width: 100%;
                     font-size: 1.3rem;
@@ -74,9 +114,11 @@
                     align-items: center;
                     justify-content: center;
                     border-radius:.6rem;
+                    transition:all .3s ease;
 
                     &:hover {
-                        background-color: var(--shadow-color);
+                        background-color: var(--dark-grey);
+                        color:var(--text-white);
                         box-shadow: 0 0 6px var(--shadow-color);
                         cursor: pointer;
                     }

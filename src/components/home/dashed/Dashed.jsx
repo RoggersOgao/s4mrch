@@ -40,7 +40,7 @@ function Dashed() {
         height: 350,
         type: 'line',
         stacked: false,
-        background: light ? '#fff' : '#363a50'
+        background: light ? '#fff' : '#2a2d41'
       },
       theme: {
         mode: light ? "light" : "dark",

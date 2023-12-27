@@ -6,6 +6,8 @@ import { BsFillInfoCircleFill } from "react-icons/bs";
 import SearchDropdown from "@/components/utilities/searchDropdown/SearchDropdown";
 import Fashion from "../fashion/Fashion";
 import Multiselect from "@/components/utilities/multiselect/Multiselect";
+import Game from "@/components/utilities/Game";
+import Button from "@/components/utilities/button/Button";
 
 function AddNew() {
   const [form, setForm] = useState({});
@@ -99,6 +101,8 @@ function AddNew() {
             </div>
           </div>
           <div className={styles.right}>
+
+            <div className={styles.top}>
             {form.category == "Fashion" && (
               <>
                 <div className={styles.imagesContainer}>
@@ -119,6 +123,7 @@ function AddNew() {
                         id="size"
                         icon={<BsFillInfoCircleFill />}
                       />
+
                     </div>
                   </div>
                   <div className={styles.colorProps}>
@@ -132,8 +137,24 @@ function AddNew() {
                     />
                   </div>
                 </div>
+
+                <div className={styles.productDate}>
+                  <div className={styles.formGroup}>
+                  <label htmlFor="productDate">Product Date</label>
+                  <input type="date" />
+                  </div>
+                </div>
+
+
               </>
             )}
+            </div>
+            <div className={styles.bottom}>
+              <di className={styles.save}>
+              <Button type="submit" color="#3995e9">Save Product</Button>
+              </di>
+            </div>
+           
           </div>
         </form>
       </div>
