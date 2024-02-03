@@ -43,7 +43,7 @@ function CandlestickChart() {
         chart: {
           height: 350,
           type: 'line',
-          background: light ? '#fff' : '#0C0F15'
+          background: light ? '#fff' : '#2A2D3E'
         },
         stroke: {
           width: [0, 4]
